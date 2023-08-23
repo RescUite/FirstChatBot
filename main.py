@@ -1,6 +1,6 @@
 import asyncio
 from aiogram import Bot, Dispatcher
-from handlers import start, any_text, sticker, hello
+from handlers import start, any_text, sticker, hello, photo
 from config import settings
 
 
@@ -15,6 +15,7 @@ async def main():
     dp.include_router(sticker.router)
     dp.include_router(hello.router)
     dp.include_router(any_text.router)
+    dp.include_router(photo.router)
 
     await dp.start_polling(bot)
 
